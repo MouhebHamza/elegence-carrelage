@@ -255,7 +255,7 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* 3. Réalisations - Updated to 7 items Grid and Links to Detail Page */}
+            {/* 3. Réalisations */}
             <section id={SectionId.PORTFOLIO} className='py-24 bg-stone-50'>
                 <div className='container mx-auto px-6'>
                     <div className='flex flex-col items-center text-center mb-16 space-y-8'>
@@ -397,37 +397,40 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* 5. Google Testimonials */}
+            {/* 5. Google Testimonials Section - UPDATED LAYOUT */}
             <section className='py-24 bg-stone-100/30 border-t border-stone-200'>
-                <div className='container mx-auto px-6 text-center'>
+                <div className='container mx-auto px-4 md:px-6 text-center'>
                     <div className='mb-12 text-center flex flex-col items-center'>
-                        <h2 className='text-4xl md:text-5xl font-sans font-medium text-stone-900 mb-6 uppercase tracking-tight'>
+                        <h2 className='text-3xl md:text-5xl font-sans font-medium text-stone-900 mb-6 uppercase tracking-tight'>
                             Ce que nos clients disent
                         </h2>
                         <div className='flex justify-center gap-2 mb-10'>
                             {[...Array(5)].map((_, i) => (
                                 <Star
                                     key={i}
-                                    size={28}
+                                    size={24}
                                     className='fill-yellow-400 text-yellow-400'
                                 />
                             ))}
                         </div>
                     </div>
 
-                    <div className='max-w-4xl mx-auto relative px-4 text-left'>
-                        <div className='bg-white rounded-3xl p-8 md:p-14 shadow-2xl shadow-stone-300/20 relative overflow-hidden border border-stone-100'>
-                            <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10'>
+                    <div className='max-w-4xl mx-auto relative text-left'>
+                        <div className='bg-white rounded-2xl md:rounded-3xl p-6 md:p-14 shadow-2xl shadow-stone-300/20 relative overflow-hidden border border-stone-100'>
+                            {/* Header: Title Left, Google Right (Desktop) / Stacked (Mobile) */}
+                            <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 mb-8 md:mb-10'>
                                 <div>
-                                    <h3 className='text-2xl font-bold text-black mb-1'>
+                                    <h3 className='text-xl md:text-2xl font-bold text-black mb-1'>
                                         {TESTIMONIALS[testimonialIdx].heading}
                                     </h3>
-                                    <p className='text-sm text-stone-500 uppercase tracking-widest font-medium'>
+                                    <p className='text-xs md:text-sm text-stone-500 uppercase tracking-widest font-medium'>
                                         Avis Google Authentique
                                     </p>
                                 </div>
-                                <div className='flex items-center scale-110 origin-right'>
-                                    <span className='text-2xl font-bold tracking-tighter flex items-baseline'>
+
+                                {/* Google Badge: Left aligned on mobile, Right on Desktop */}
+                                <div className='flex items-center gap-3 md:scale-110 md:origin-right mt-2 md:mt-0'>
+                                    <div className='flex items-center font-sans font-bold text-2xl tracking-tighter'>
                                         <span className='text-[#4285F4]'>
                                             G
                                         </span>
@@ -446,8 +449,8 @@ const Home: React.FC = () => {
                                         <span className='text-[#EA4335]'>
                                             e
                                         </span>
-                                    </span>
-                                    <div className='flex ml-6 gap-0.5'>
+                                    </div>
+                                    <div className='flex gap-0.5 mt-1'>
                                         {[...Array(5)].map((_, i) => (
                                             <Star
                                                 key={i}
@@ -459,8 +462,9 @@ const Home: React.FC = () => {
                                 </div>
                             </div>
 
-                            <div className='mb-12 min-h-[160px]'>
-                                <p className='text-stone-800 text-xl leading-relaxed font-light italic'>
+                            {/* Body Text */}
+                            <div className='mb-8 md:mb-12 min-h-[140px] md:min-h-[160px]'>
+                                <p className='text-stone-800 text-lg md:text-xl leading-relaxed font-light italic'>
                                     "{TESTIMONIALS[testimonialIdx].text}"
                                 </p>
                                 <button className='text-stone-400 text-sm font-medium mt-6 hover:underline'>
@@ -468,35 +472,38 @@ const Home: React.FC = () => {
                                 </button>
                             </div>
 
-                            <div className='flex items-center justify-between border-t border-stone-50 pt-10'>
-                                <div className='flex items-center gap-5'>
+                            {/* Footer: User + Arrows */}
+                            <div className='flex flex-row items-center justify-between border-t border-stone-50 pt-8 mt-4'>
+                                {/* User Info */}
+                                <div className='flex items-center gap-3 md:gap-5'>
                                     <div
-                                        className={`w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-inner ${TESTIMONIALS[testimonialIdx].color}`}>
+                                        className={`w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center text-white font-bold text-lg md:text-2xl shadow-inner ${TESTIMONIALS[testimonialIdx].color}`}>
                                         {TESTIMONIALS[testimonialIdx].initial}
                                     </div>
                                     <div>
-                                        <h4 className='font-bold text-stone-900 text-lg leading-tight'>
+                                        <h4 className='font-bold text-stone-900 text-base md:text-lg leading-tight'>
                                             {TESTIMONIALS[testimonialIdx].name}
                                         </h4>
-                                        <span className='text-stone-400 text-sm font-light italic'>
+                                        <span className='text-stone-400 text-xs md:text-sm font-light italic block mt-0.5'>
                                             Publié le{" "}
                                             {TESTIMONIALS[testimonialIdx].date}
                                         </span>
                                     </div>
                                 </div>
 
-                                <div className='flex gap-4'>
+                                {/* Arrows */}
+                                <div className='flex gap-3'>
                                     <button
                                         onClick={prevTestimonial}
-                                        className='w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-50 transition-all hover:scale-110 shadow-sm'
+                                        className='w-10 h-10 md:w-12 md:h-12 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-50 transition-all hover:scale-110 shadow-sm'
                                         aria-label='Témoignage précédent'>
-                                        <ChevronLeft size={24} />
+                                        <ChevronLeft size={20} />
                                     </button>
                                     <button
                                         onClick={nextTestimonial}
-                                        className='w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-50 transition-all hover:scale-110 shadow-sm'
+                                        className='w-10 h-10 md:w-12 md:h-12 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:bg-stone-50 transition-all hover:scale-110 shadow-sm'
                                         aria-label='Témoignage suivant'>
-                                        <ChevronRight size={24} />
+                                        <ChevronRight size={20} />
                                     </button>
                                 </div>
                             </div>
