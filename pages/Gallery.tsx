@@ -4,30 +4,110 @@ import { ArrowLeft } from 'lucide-react';
 
 // Shared data definition (duplicated for independence)
 const GALLERY_ITEMS = [
-  // Bathroom
-  { id: 1, category: 'Salle de Bain', caption: 'Douche Italienne Marbre', url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop' },
-  { id: 2, category: 'Salle de Bain', caption: 'Faïence Géométrique', url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop' },
-  { id: 3, category: 'Salle de Bain', caption: 'Baignoire Îlot', url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop' },
-  { id: 4, category: 'Salle de Bain', caption: 'Vasque Pierre', url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop' },
-  { id: 5, category: 'Salle de Bain', caption: 'Mosaïque Douche', url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop' },
-  
-  // Kitchen
-  { id: 6, category: 'Cuisine', caption: 'Crédence Zellige', url: 'https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=800&auto=format&fit=crop' },
-  { id: 7, category: 'Cuisine', caption: 'Sol Effet Béton', url: 'https://images.unsplash.com/photo-1588854337443-488b0d24cc1c?q=80&w=800&auto=format&fit=crop' },
-  { id: 8, category: 'Cuisine', caption: 'Ilot Central', url: 'https://images.unsplash.com/photo-1556911220-e8db6e691a32?q=80&w=800&auto=format&fit=crop' },
-  { id: 9, category: 'Cuisine', caption: 'Carrelage Métro', url: 'https://images.unsplash.com/photo-1484154218962-a1c002085d2f?q=80&w=800&auto=format&fit=crop' },
-  
-  // Interior
-  { id: 10, category: 'Intérieur', caption: 'Grès Cérame Salon', url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop' },
-  { id: 11, category: 'Intérieur', caption: 'Travertin Entrée', url: 'https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=800&auto=format&fit=crop' },
-  { id: 12, category: 'Intérieur', caption: 'Sol Chevrons', url: 'https://images.unsplash.com/photo-1581858726768-758a0336188e?q=80&w=800&auto=format&fit=crop' },
-  { id: 13, category: 'Intérieur', caption: 'Escalier Moderne', url: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop' },
+    // Bathroom
+    {
+        id: 1,
+        category: "Salle de Bain",
+        caption: "Douche Italienne Marbre",
+        url: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 2,
+        category: "Salle de Bain",
+        caption: "Faïence Géométrique",
+        url: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 3,
+        category: "Salle de Bain",
+        caption: "Baignoire Îlot",
+        url: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 4,
+        category: "Salle de Bain",
+        caption: "Vasque Pierre",
+        url: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 5,
+        category: "Salle de Bain",
+        caption: "Mosaïque Douche",
+        url: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop"
+    },
 
-  // Exterior
-  { id: 14, category: 'Extérieur', caption: 'Terrasse Piscine', url: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=800&auto=format&fit=crop' },
-  { id: 15, category: 'Extérieur', caption: 'Dalle sur Plots', url: 'https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=800&auto=format&fit=crop' },
-  { id: 16, category: 'Extérieur', caption: 'Allée de Jardin', url: 'https://images.unsplash.com/photo-1590059590918-02a82643a131?q=80&w=800&auto=format&fit=crop' }
-];
+    // Kitchen
+    {
+        id: 6,
+        category: "Cuisine",
+        caption: "Crédence Zellige",
+        url: "https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 7,
+        category: "Cuisine",
+        caption: "Sol Effet Béton",
+        url: "https://images.unsplash.com/photo-1588854337443-488b0d24cc1c?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 8,
+        category: "Cuisine",
+        caption: "Ilot Central",
+        url: "https://images.unsplash.com/photo-1556911220-e8db6e691a32?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 9,
+        category: "Cuisine",
+        caption: "Carrelage Métro",
+        url: "https://images.unsplash.com/photo-1484154218962-a1c002085d2f?q=80&w=800&auto=format&fit=crop"
+    },
+
+    // Interior
+    {
+        id: 10,
+        category: "Intérieur",
+        caption: "Grès Cérame Salon",
+        url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 11,
+        category: "Intérieur",
+        caption: "Travertin Entrée",
+        url: "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 12,
+        category: "Intérieur",
+        caption: "Sol Chevrons",
+        url: "https://images.unsplash.com/photo-1581858726768-758a0336188e?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 13,
+        category: "Intérieur",
+        caption: "Escalier Moderne",
+        url: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop"
+    },
+
+    // Exterior
+    {
+        id: 14,
+        category: "Extérieur",
+        caption: "Terrasse Piscine",
+        url: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 15,
+        category: "Extérieur",
+        caption: "Dalle sur Plots",
+        url: "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+        id: 16,
+        category: "Extérieur",
+        caption: "Allée de Jardin",
+        url: "https://images.unsplash.com/photo-1590059590918-02a82643a131?q=80&w=800&auto=format&fit=crop"
+    }
+]
 
 const Gallery: React.FC = () => {
   const navigate = useNavigate();
