@@ -1,6 +1,6 @@
 // File: élégance-carrelage/App.tsx
 import React from "react"
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import Home from "./pages/Home"
 import Gallery from "./pages/Gallery"
 import ProjectDetail from "./pages/ProjectDetail"
@@ -8,7 +8,6 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import WhatsAppButton from "./components/WhatsAppButton"
 import { useEffect } from "react"
-import { SectionId } from "./types"
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -23,7 +22,7 @@ const ScrollToTop = () => {
                 if (element) {
                     element.scrollIntoView({ behavior: "smooth" })
                 }
-            }, 100) // Small delay to ensure page render
+            }, 100)
         } else {
             window.scrollTo(0, 0)
         }
@@ -34,7 +33,7 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <ScrollToTop />
             <div className='flex flex-col min-h-screen font-sans text-stone-900 bg-stone-50 selection:bg-stone-200'>
                 <Header />
@@ -51,7 +50,7 @@ const App: React.FC = () => {
                 <WhatsAppButton />
                 <Footer />
             </div>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 
