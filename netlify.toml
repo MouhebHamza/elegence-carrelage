@@ -1,0 +1,13 @@
+# File: élégance-carrelage/netlify.toml
+
+[build]
+  # The command to build your React app
+  command = "npm run build"
+  # The folder that contains the built files (Critical fix)
+  publish = "dist"
+
+# Fixes 404 errors when refreshing pages (SPA Routing)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
